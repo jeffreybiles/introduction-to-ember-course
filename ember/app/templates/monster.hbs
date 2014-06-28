@@ -1,0 +1,38 @@
+<div class="monster-card">
+  <span class="name">{{name}}</span>
+  <span>{{currentHp}}/{{maxHp}} HP</span>
+  <span>Level: {{level}}</span>
+
+  <img {{bind-attr src=imageUrl}} />
+
+  <ul class="moves list-unstyled">
+    <li class="heal move">
+      <div class="move-title">
+        <span class="btn btn-default" {{action 'heal'}}>Heal</span>
+        <span class="move-number">5</span>
+      </div>
+      <div class="move-description">
+        Heals the monster, increasing their current health.
+      </div>
+    </li>
+    <li class="attack move">
+      <div class="move-title">
+        <span class="btn btn-default" {{action 'fight'}}>Fight</span>
+        <span class="move-number">-5</span>
+      </div>
+      <div class="move-description">
+        Attack another monster, losing a little health in the process.
+      </div>
+    </li>
+  </ul>
+ </div>
+ {{#if isEditing}}
+   You are editing
+     {{input value=model.name}}
+    <button {{action update}}>I'm done</button>
+ {{else}}
+   Would you like to edit?
+
+   <button {{action edit}}>Yes, please edit</button>
+ {{/if}}
+</div>

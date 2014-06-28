@@ -1,0 +1,84 @@
+html, body {
+  margin: 20px;
+}
+
+li.monster {
+  border: 2px solid @card-border-color;
+  text-align: center;
+  border-radius: 7px;
+  margin: 5px;
+  max-width: 140px;
+  background-color: darken(@card-background-color, 3%);
+  img {
+    max-height: 100px;
+  }
+
+  &.conscious{
+    background-color: multiply(@card-background-color, #BEB);
+  }
+
+
+  &.unconscious{
+    background-color: multiply(@card-background-color, #EBB);
+  }
+}
+
+a {
+  color: black;
+}
+ul.monsters {
+}
+
+.monster-card {
+   border-image: linear-gradient(30deg,
+     darken(@card-border-color, 15%) 0%,
+     lighten(@card-border-color, 10%) 15%,
+     @card-border-color 30%,
+     lighten(@card-border-color, 15%) 50%,
+     @card-border-color 70%,
+     darken(@card-border-color, 8%) 85%,
+     lighten(@card-border-color, 5%) 100%)
+     1%;
+  border-width: 15px;
+  width: 300px;
+  height: 500px;
+  border-radius: 10px;
+  text-align: center;
+  background-image: radial-gradient(@card-background-color, darken(@card-background-color, 18%));
+  padding: 5px 20px;
+  .name {
+    float: left;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .hp {
+    float: right;
+  }
+  img {
+    max-width: 200px;
+    border: 5px @card-border-color solid;
+    margin: 10px;
+  }
+
+  .move {
+    position: relative;
+    padding: 5px 1px;
+
+    .move-title {
+      text-align: left;
+      .btn {
+      }
+      .move-number {
+        float: right;
+        font-size: 1.5em;
+      }
+    }
+
+    .move-description {
+      padding: 2px;
+    }
+  }
+}
+
+@card-border-color: #F8E94D;
+@card-background-color: #DACADA;

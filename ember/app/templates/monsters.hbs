@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-sm-3 col-xs-6">
+    {{monsterCount}} monsters, {{consciousMonsterCount}} conscious
+    <ul class="monsters list-unstyled">
+    {{#each monster in model}}
+
+    {{#link-to 'monster' monster}}
+      <li {{bind-attr class=":monster monster.conscious:conscious:unconscious"}}>
+          {{monster.name}}, level {{monster.level}}
+          <br>
+          <img {{bind-attr src=monster.imageUrl}} />
+        {{#if monster.conscious}}
+          <p>Conscious</p>
+        {{else}}
+          <p>Knocked Out</p>
+         {{/if}}
+      </li>
+      {{/link-to}}
+
+    {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-sm-9 col-xs-6">
+    {{outlet}}
+  </div>
+</div>

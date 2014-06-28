@@ -1,0 +1,61 @@
+html,
+body {
+  margin: 20px;
+}
+li.monster {
+  border: 2px solid #f8e94d;
+  text-align: center;
+  border-radius: 7px;
+  margin: 5px;
+  max-width: 140px;
+  background-color: #d4c1d4;
+}
+li.monster img {
+  max-height: 100px;
+}
+li.monster.conscious {
+  background-color: #a0bda0;
+}
+li.monster.unconscious {
+  background-color: #cb94a0;
+}
+a {
+  color: black;
+}
+.monster-card {
+  border-image: linear-gradient(30deg, #efdb09 0%, #faef7e 15%, #f8e94d 30%, #fbf297 50%, #f8e94d 70%, #f6e426 85%, #f9ec66 100%) 1%;
+  border-width: 15px;
+  width: 300px;
+  height: 500px;
+  border-radius: 10px;
+  text-align: center;
+  background-image: radial-gradient(#dacada, #b494b4);
+  padding: 5px 20px;
+}
+.monster-card .name {
+  float: left;
+  font-size: 2em;
+  font-weight: bold;
+}
+.monster-card .hp {
+  float: right;
+}
+.monster-card img {
+  max-width: 200px;
+  border: 5px #f8e94d solid;
+  margin: 10px;
+}
+.monster-card .move {
+  position: relative;
+  padding: 5px 1px;
+}
+.monster-card .move .move-title {
+  text-align: left;
+}
+.monster-card .move .move-title .move-number {
+  float: right;
+  font-size: 1.5em;
+}
+.monster-card .move .move-description {
+  padding: 2px;
+}
