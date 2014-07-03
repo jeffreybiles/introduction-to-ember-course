@@ -5,7 +5,7 @@ var Monster = DS.Model.extend({
   level: DS.attr('number'),
   imageUrl: DS.attr('string'),
   currentHp: DS.attr('number'),
-  maxHp: DS.attr('boolean'),
+  maxHp: DS.attr('number'),
 
   conscious: function(){
     return this.get('currentHp') > 0;
