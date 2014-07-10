@@ -42,6 +42,7 @@ a {
 }
 .monster-card img {
   max-width: 200px;
+  max-height: 225px;
   border: 5px #f8e94d solid;
   margin: 10px;
 }

@@ -6,6 +6,8 @@ var tmp     = require('../../helpers/tmp');
 var touch   = require('../../helpers/file-utils').touch;
 var assert  = require('assert');
 
+var emberCLIVersion = require('../../../lib/utilities/ember-cli-version');
+
 describe('models/project.js', function() {
   var project, projectPath;
 
@@ -81,6 +83,33 @@ describe('models/project.js', function() {
       var addons = project.addons;
 
       assert.equal(addons[1].name, 'Ember Random Addon');
+    });
+
+    it('returns the default blueprints path', function() {
+      var expected = project.root + '/blueprints';
+
+      assert.equal(project.localBlueprintLookupPath(), expected);
+    });
+
+    it('returns a listing of all addon blueprints paths', function() {
+      var expected = [ project.root + '/node_modules/ember-random-addon/blueprints' ];
+
+      assert.deepEqual(project.addonBlueprintLookupPaths(), expected);
+    });
+
+    it('returns a listing of all blueprints paths', function() {
+      var expected = [
+        project.root + '/blueprints',
+        project.root + '/node_modules/ember-random-addon/blueprints'
+      ];
+
+      assert.deepEqual(project.blueprintLookupPaths(), expected);
+    });
+  });
+
+  describe('emberCLIVersion', function() {
+    it('should return the same value as the utlity function', function() {
+      assert.equal(project.emberCLIVersion(), emberCLIVersion());
     });
   });
 });

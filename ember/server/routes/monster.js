@@ -1,7 +1,6 @@
 module.exports = function(app, db) {
   app.get('/api/monsters', function(req, res){
     db.find({}, function(err, docs){
-      console.log('im in yer monster, logging yer console', docs)
       res.send({monsters: docs});
     });
   });
@@ -11,7 +10,8 @@ module.exports = function(app, db) {
     res.send(201)
   })
 
-  app.post('api/monsters/:id', function(req, res){
+  app.put('api/monsters/:id', function(req, res){
+    console.log('doin it',req, res)
     db.update({id: req.id}, {$set: req.params}, function(){
       res.send(200)
     })

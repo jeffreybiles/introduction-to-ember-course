@@ -20,6 +20,7 @@ var Monster = DS.Model.extend({
       newHp = maxHp;
     }
     this.set('currentHp', newHp);
+    // this.save()
   }
 });
 
