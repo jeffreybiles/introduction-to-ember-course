@@ -29,6 +29,8 @@
     "originate": "0.1.5"
   },
   "dependencies": {
-    "broccoli-less": "^0.2.0"
+    "broccoli-less": "^0.2.0",
+    "lodash": "^2.4.1",
+    "nedb": "^0.10.5"
   }
 }
